@@ -1,0 +1,32 @@
+> in order to access an element or an element value, previously we used
+refs for this.
+
+Ex: <input type="text" ref="inputNode" defaultValue="def"/>
+
+so now inorder to access this particular element we can do
+
+getInput(){
+	console.log(this.refs.inputNode);
+	//SYNTAX: this.refs.refName here refName is inputNode
+	//this gives the entire input element.
+	//To get the value we can do 
+	console.log(this.refs.inputNode.value);
+}
+----------
+But assigning a string to the "ref" attribute is deprecated, so that can be re written as
+
+<input type="text" ref={(input)=>this.inputNode = input}/>
+
+//here the argument (input) refers to the element itself and we are storing
+that input DOM element inside of "this.refName"-->here refName we gave is "inputNode"
+now to access this we can do
+
+getInput(){
+	console.log(this.inputNode);
+	//this gives the input DOM element
+	//to get the value we can write
+	console.log(this.inputNode.value);
+}
+
+REFER https://www.youtube.com/watch?v=gpIbJsSsbz4
+REFER https://www.youtube.com/watch?v=CbefkFUWW_g
